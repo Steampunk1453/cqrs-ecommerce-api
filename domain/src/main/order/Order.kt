@@ -17,14 +17,14 @@ class Order(val id: UUID, val customer: Customer) {
         if (items.any { it.product == product })
             throw BusinessException("Product already exists!")
 
-        var item = Item(product, quantity)
+        val item = Item(product, quantity)
         items.add(item)
     }
 
     fun changeProductQuantity(product: Product, quantity: Int) {
         validateIfProductIsOnList(product)
 
-        var item = items.first { it.product == product }
+        val item = items.first { it.product == product }
         item.changeQuantity(quantity)
     }
 
@@ -50,7 +50,7 @@ class Order(val id: UUID, val customer: Customer) {
     fun items() = items.toList()
 
     private fun validateIfProductIsOnList(product: Product) {
-        var isOnList = items.any { it.product == product }
+        val isOnList = items.any { it.product == product }
         if (!isOnList)
             throw BusinessException("The product isn't included in this order")
     }
