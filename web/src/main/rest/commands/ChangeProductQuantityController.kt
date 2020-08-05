@@ -1,6 +1,6 @@
 package cqrs.ecommerce.api.web.rest.commands
 
-import cqrs.ecommerce.api.application.order.commandhandlers.commands.ChangeProductQuantityCommand
+import cqrs.ecommerce.api.application.order.commands.ChangeProductQuantityCommand
 import cqrs.ecommerce.api.web.models.ChangeProductQuantityRequest
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.springframework.http.HttpStatus

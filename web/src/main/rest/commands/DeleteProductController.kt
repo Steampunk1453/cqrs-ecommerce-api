@@ -1,6 +1,6 @@
 package cqrs.ecommerce.api.web.rest.commands
 
-import cqrs.ecommerce.api.application.order.commandhandlers.commands.RemoveProductCommand
+import cqrs.ecommerce.api.application.order.commands.RemoveProductCommand
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping

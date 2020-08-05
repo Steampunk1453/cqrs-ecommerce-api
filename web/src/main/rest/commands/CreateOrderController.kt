@@ -1,6 +1,6 @@
 package cqrs.ecommerce.api.web.rest.commands
 
-import cqrs.ecommerce.api.application.order.commandhandlers.commands.CreateOrderCommand
+import cqrs.ecommerce.api.application.order.commands.CreateOrderCommand
 import cqrs.ecommerce.api.web.models.CreateOrderRequest
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.springframework.http.HttpStatus

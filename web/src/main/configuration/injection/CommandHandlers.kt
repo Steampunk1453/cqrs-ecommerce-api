@@ -1,6 +1,10 @@
 package cqrs.ecommerce.api.web.configuration.injection
 
-import cqrs.ecommerce.api.application.order.commandhandlers.OrderCommandHandlers
+import cqrs.ecommerce.api.application.order.handlers.AddProductCommandHandler
+import cqrs.ecommerce.api.application.order.handlers.ChangeProductQuantityCommandHandler
+import cqrs.ecommerce.api.application.order.handlers.CreateOrderCommandHandler
+import cqrs.ecommerce.api.application.order.handlers.PayOrderCommandHandler
+import cqrs.ecommerce.api.application.order.handlers.RemoveProductCommandHandler
 import cqrs.ecommerce.api.domain.order.OrderRepository
 import cqrs.ecommerce.api.domain.order.payment.PaymentService
 import org.axonframework.eventhandling.EventBus
@@ -19,8 +23,30 @@ class CommandHandlers {
     @Autowired
     lateinit var eventBus: EventBus
 
+
     @Bean
-    fun getOrderCommandHandler(): OrderCommandHandlers {
-        return OrderCommandHandlers(orderRepository, paymentService, eventBus)
+    fun getCreateOrderCommandHandler(): CreateOrderCommandHandler {
+        return CreateOrderCommandHandler(orderRepository)
     }
+
+    @Bean
+    fun getAddProductCommandHandler(): AddProductCommandHandler {
+        return AddProductCommandHandler(orderRepository)
+    }
+
+    @Bean
+    fun getChangeProductQuantityCommandHandler(): ChangeProductQuantityCommandHandler {
+        return ChangeProductQuantityCommandHandler(orderRepository)
+    }
+
+    @Bean
+    fun getRemoveProductCommandHandler(): RemoveProductCommandHandler {
+        return RemoveProductCommandHandler(orderRepository)
+    }
+
+    @Bean
+    fun getPayOrderCommandHandler(): PayOrderCommandHandler {
+        return PayOrderCommandHandler(orderRepository, paymentService, eventBus)
+    }
+
 }

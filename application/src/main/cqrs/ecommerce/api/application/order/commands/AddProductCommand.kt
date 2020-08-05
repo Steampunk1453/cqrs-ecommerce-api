@@ -1,4 +1,4 @@
-package cqrs.ecommerce.api.application.order.commandhandlers.commands
+package cqrs.ecommerce.api.application.order.commands
 
 import java.util.UUID
 

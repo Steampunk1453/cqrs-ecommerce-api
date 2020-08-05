@@ -1,6 +1,6 @@
 package cqrs.ecommerce.api.web.rest.commands
 
-import cqrs.ecommerce.api.application.order.commandhandlers.commands.PayOrderCommand
+import cqrs.ecommerce.api.application.order.commands.PayOrderCommand
 import cqrs.ecommerce.api.domain.order.payment.CreditCard
 import cqrs.ecommerce.api.web.models.PayOrderRequest
 import org.axonframework.commandhandling.gateway.CommandGateway
