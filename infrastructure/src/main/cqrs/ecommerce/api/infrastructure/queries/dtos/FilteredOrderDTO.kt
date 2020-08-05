@@ -1,6 +1,7 @@
-package kotlinddd.infrastructure.queries.dtos
+package cqrs.ecommerce.api.infrastructure.queries.dtos
 
-import java.util.*
+import java.util.UUID
+
 
 data class OrderDTO(val id: UUID, val items: List<ItemDTO>)
 

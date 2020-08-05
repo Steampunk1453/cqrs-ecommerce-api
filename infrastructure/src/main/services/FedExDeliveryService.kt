@@ -1,8 +1,8 @@
-package kotlinddd.infrastructure.services
+package cqrs.ecommerce.api.infrastructure.services
 
-import kotlinddd.domain.order.Order
-import kotlinddd.domain.shipping.DeliveryProviderService
-import kotlinddd.domain.shipping.ShippingLabel
+import cqrs.ecommerce.api.domain.order.Order
+import cqrs.ecommerce.api.domain.shipping.DeliveryProviderService
+import cqrs.ecommerce.api.domain.shipping.ShippingLabel
 import java.util.Date
 
 class FedExDeliveryService : DeliveryProviderService {

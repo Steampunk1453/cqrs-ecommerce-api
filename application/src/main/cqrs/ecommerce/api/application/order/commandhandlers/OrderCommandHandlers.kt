@@ -1,10 +1,10 @@
-package kotlinddd.application.order.commandhandlers
+package cqrs.ecommerce.api.application.order.commandhandlers
 
-import kotlinddd.application.order.commandhandlers.commands.*
-import kotlinddd.domain.order.Order
-import kotlinddd.domain.order.OrderRepository
+import cqrs.ecommerce.api.application.order.commandhandlers.commands.*
+import cqrs.ecommerce.api.domain.order.Order
+import cqrs.ecommerce.api.domain.order.OrderRepository
 import org.axonframework.commandhandling.CommandHandler
-import kotlinddd.domain.order.payment.PaymentService
+import cqrs.ecommerce.api.domain.order.payment.PaymentService
 import org.axonframework.eventhandling.EventBus
 import java.util.UUID
 

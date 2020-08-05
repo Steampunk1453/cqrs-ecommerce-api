@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-group = 'kotlinddd'
+group = 'cqrs.ecommerce.api'
 version = '1.0-SNAPSHOT'
 ext.axonVersion = '3.3'
 

@@ -1,10 +1,10 @@
-package kotlinddd.infrastructure.repositories
+package cqrs.ecommerce.api.infrastructure.repositories
 
-import kotlinddd.domain.order.Order
-import kotlinddd.domain.order.OrderRepository
-import kotlinddd.domain.order.Product
-import kotlinddd.domain.order.customer.Address
-import kotlinddd.domain.order.customer.Customer
+import cqrs.ecommerce.api.domain.order.Order
+import cqrs.ecommerce.api.domain.order.OrderRepository
+import cqrs.ecommerce.api.domain.order.Product
+import cqrs.ecommerce.api.domain.order.customer.Address
+import cqrs.ecommerce.api.domain.order.customer.Customer
 import org.javamoney.moneta.Money
 import java.util.UUID
 import javax.money.Monetary

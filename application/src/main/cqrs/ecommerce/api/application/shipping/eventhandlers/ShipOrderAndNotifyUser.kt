@@ -1,8 +1,8 @@
-package kotlinddd.application.shipping.eventhandlers
+package cqrs.ecommerce.api.application.shipping.eventhandlers
 
-import kotlinddd.domain.order.OrderPaid
-import kotlinddd.domain.order.OrderRepository
-import kotlinddd.domain.shipping.ShippingService
+import cqrs.ecommerce.api.domain.order.OrderPaid
+import cqrs.ecommerce.api.domain.order.OrderRepository
+import cqrs.ecommerce.api.domain.shipping.ShippingService
 import org.axonframework.eventhandling.EventHandler
 
 open class ShipOrderAndNotifyUser(private val orderRepository: OrderRepository,

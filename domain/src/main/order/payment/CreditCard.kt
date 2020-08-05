@@ -1,4 +1,4 @@
-package kotlinddd.domain.order.payment
+package cqrs.ecommerce.api.domain.order.payment
 
 import java.util.Date
 

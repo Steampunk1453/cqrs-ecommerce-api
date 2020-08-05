@@ -1,4 +1,4 @@
-package kotlinddd.web.configuration.injection
+package cqrs.ecommerce.api.web.configuration.injection
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
@@ -21,7 +21,7 @@ import org.springframework.amqp.core.*
 //    @Autowired
 //    fun configure(configurer: DefaultConfigurer, eventProcessingConfiguration: EventProcessingConfiguration, eventHandlingConfiguration: EventHandlingConfiguration, rabbitMessageSource: SpringAMQPMessageSource) {
 //        //TODO: find a way to make the springAMQPMessageSource the default source for all processors
-//        eventProcessingConfiguration.registerSubscribingEventProcessor("kotlinddd.application.shipping.eventhandlers") { _ -> springAMQPMessageSource }
+//        eventProcessingConfiguration.registerSubscribingEventProcessor("cqrs.ecommerce.api.application.shipping.eventhandlers") { _ -> springAMQPMessageSource }
 //    }
 //
 //    // Creating a MessageSource (that reads from rabbit) and sends received messages to axon

@@ -1,8 +1,8 @@
-package kotlinddd.infrastructure.services
+package cqrs.ecommerce.api.infrastructure.services
 
-import kotlinddd.domain.order.customer.Customer
-import kotlinddd.domain.shipping.NotificationService
-import kotlinddd.domain.shipping.ShippingLabel
+import cqrs.ecommerce.api.domain.order.customer.Customer
+import cqrs.ecommerce.api.domain.shipping.NotificationService
+import cqrs.ecommerce.api.domain.shipping.ShippingLabel
 import java.util.*
 
 class EmailNotificationService : NotificationService {

@@ -1,8 +1,8 @@
-package kotlinddd.infrastructure.queries
+package cqrs.ecommerce.api.infrastructure.queries
 
-import kotlinddd.infrastructure.queries.dtos.ItemDTO
-import kotlinddd.infrastructure.queries.dtos.OrderDTO
-import kotlinddd.infrastructure.queries.dtos.OrderPerUsersDTO
+import cqrs.ecommerce.api.infrastructure.queries.dtos.ItemDTO
+import cqrs.ecommerce.api.infrastructure.queries.dtos.OrderDTO
+import cqrs.ecommerce.api.infrastructure.queries.dtos.OrderPerUsersDTO
 import java.util.*
 
 class OrdersQuery {

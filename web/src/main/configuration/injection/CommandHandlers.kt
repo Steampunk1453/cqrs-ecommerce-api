@@ -1,8 +1,8 @@
-package kotlinddd.web.configuration.injection
+package cqrs.ecommerce.api.web.configuration.injection
 
-import kotlinddd.application.order.commandhandlers.OrderCommandHandlers
-import kotlinddd.domain.order.OrderRepository
-import kotlinddd.domain.order.payment.PaymentService
+import cqrs.ecommerce.api.application.order.commandhandlers.OrderCommandHandlers
+import cqrs.ecommerce.api.domain.order.OrderRepository
+import cqrs.ecommerce.api.domain.order.payment.PaymentService
 import org.axonframework.eventhandling.EventBus
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean

@@ -1,6 +1,6 @@
-package kotlinddd.domain.order
+package cqrs.ecommerce.api.domain.order
 
-import kotlinddd.domain.order.customer.*
+import cqrs.ecommerce.api.domain.order.customer.*
 import org.amshove.kluent.*
 import org.javamoney.moneta.Money
 import org.junit.Test

@@ -1,11 +1,11 @@
-package kotlinddd.web
+package cqrs.ecommerce.api.web
 
 import org.springframework.boot.*
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class DDDSampleApplication
+class EcommerceApplication
 
-fun main(args: Array<String>) {
-    runApplication<DDDSampleApplication>()
+fun main() {
+    runApplication<EcommerceApplication>()
 }

@@ -1,9 +1,9 @@
-package kotlinddd.web.configuration.injection
+package cqrs.ecommerce.api.web.configuration.injection
 
-import kotlinddd.domain.shipping.ShippingService
-import kotlinddd.infrastructure.services.EmailNotificationService
-import kotlinddd.infrastructure.services.FedExDeliveryService
-import kotlinddd.infrastructure.services.PaymentServiceImpl
+import cqrs.ecommerce.api.domain.shipping.ShippingService
+import cqrs.ecommerce.api.infrastructure.services.EmailNotificationService
+import cqrs.ecommerce.api.infrastructure.services.FedExDeliveryService
+import cqrs.ecommerce.api.infrastructure.services.PaymentServiceImpl
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

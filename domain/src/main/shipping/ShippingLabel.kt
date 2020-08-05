@@ -1,4 +1,4 @@
-package kotlinddd.domain.shipping
+package cqrs.ecommerce.api.domain.shipping
 
 import java.util.Date
 

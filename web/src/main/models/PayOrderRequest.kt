@@ -1,4 +1,4 @@
-package kotlinddd.web.models
+package cqrs.ecommerce.api.web.models
 
 import java.util.*
 

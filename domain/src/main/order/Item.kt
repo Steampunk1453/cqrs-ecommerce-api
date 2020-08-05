@@ -1,6 +1,6 @@
-package kotlinddd.domain.order
+package cqrs.ecommerce.api.domain.order
 
-import kotlinddd.domain.BusinessException
+import cqrs.ecommerce.api.domain.BusinessException
 
 class Item(val product: Product, private var quantity: Int) {
     init {

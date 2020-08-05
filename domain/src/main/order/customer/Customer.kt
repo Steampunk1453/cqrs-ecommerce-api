@@ -1,4 +1,4 @@
-package kotlinddd.domain.order.customer
+package cqrs.ecommerce.api.domain.order.customer
 
 import java.util.UUID
 

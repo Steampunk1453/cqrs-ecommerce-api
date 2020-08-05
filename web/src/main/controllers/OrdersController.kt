@@ -1,13 +1,12 @@
-package kotlinddd.web.controllers
+package cqrs.ecommerce.api.web.controllers
 
-import kotlinddd.application.order.commandhandlers.commands.*
-import kotlinddd.domain.BusinessException
-import kotlinddd.domain.order.payment.CreditCard
-import kotlinddd.infrastructure.queries.OrdersQuery
-import kotlinddd.infrastructure.queries.dtos.OrderDTO
-import kotlinddd.infrastructure.queries.dtos.OrderPerUsersDTO
-import kotlinddd.web.models.*
-import kotlinddd.web.models.PayOrderRequest
+import cqrs.ecommerce.api.application.order.commandhandlers.commands.*
+import cqrs.ecommerce.api.domain.order.payment.CreditCard
+import cqrs.ecommerce.api.infrastructure.queries.OrdersQuery
+import cqrs.ecommerce.api.infrastructure.queries.dtos.OrderDTO
+import cqrs.ecommerce.api.infrastructure.queries.dtos.OrderPerUsersDTO
+import cqrs.ecommerce.api.web.models.*
+import cqrs.ecommerce.api.web.models.PayOrderRequest
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
