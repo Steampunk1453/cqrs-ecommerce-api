@@ -1,6 +1,6 @@
-package kotlinddd.domain.shipping
+package cqrs.ecommerce.api.domain.shipping
 
-import kotlinddd.domain.order.Order
+import cqrs.ecommerce.api.domain.order.Order
 
 interface DeliveryProviderService {
     fun requestFastDelivery(order: Order) : ShippingLabel

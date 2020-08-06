@@ -1,7 +1,7 @@
-package kotlinddd.web.configuration.injection
+package cqrs.ecommerce.api.web.configuration.injection
 
-import kotlinddd.domain.order.OrderRepository
-import kotlinddd.infrastructure.repositories.OrderRepositoryImpl
+import cqrs.ecommerce.api.domain.order.OrderRepository
+import cqrs.ecommerce.api.infrastructure.repositories.OrderRepositoryImpl
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

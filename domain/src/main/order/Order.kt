@@ -1,9 +1,9 @@
-package kotlinddd.domain.order
+package cqrs.ecommerce.api.domain.order
 
-import kotlinddd.domain.BusinessException
-import kotlinddd.domain.order.payment.CreditCard
-import kotlinddd.domain.order.payment.PaymentService
-import kotlinddd.domain.order.customer.Customer
+import cqrs.ecommerce.api.domain.BusinessException
+import cqrs.ecommerce.api.domain.order.payment.CreditCard
+import cqrs.ecommerce.api.domain.order.payment.PaymentService
+import cqrs.ecommerce.api.domain.order.customer.Customer
 import org.axonframework.eventhandling.EventBus
 import org.axonframework.eventhandling.GenericEventMessage
 import java.util.UUID
@@ -17,14 +17,14 @@ class Order(val id: UUID, val customer: Customer) {
         if (items.any { it.product == product })
             throw BusinessException("Product already exists!")
 
-        var item = Item(product, quantity)
+        val item = Item(product, quantity)
         items.add(item)
     }
 
     fun changeProductQuantity(product: Product, quantity: Int) {
         validateIfProductIsOnList(product)
 
-        var item = items.first { it.product == product }
+        val item = items.first { it.product == product }
         item.changeQuantity(quantity)
     }
 
@@ -50,7 +50,7 @@ class Order(val id: UUID, val customer: Customer) {
     fun items() = items.toList()
 
     private fun validateIfProductIsOnList(product: Product) {
-        var isOnList = items.any { it.product == product }
+        val isOnList = items.any { it.product == product }
         if (!isOnList)
             throw BusinessException("The product isn't included in this order")
     }

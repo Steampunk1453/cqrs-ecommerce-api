@@ -1,8 +1,8 @@
-package kotlinddd.web.configuration.injection
+package cqrs.ecommerce.api.web.configuration.injection
 
-import kotlinddd.application.shipping.eventhandlers.ShipOrderAndNotifyUser
-import kotlinddd.domain.order.OrderRepository
-import kotlinddd.domain.shipping.ShippingService
+import cqrs.ecommerce.api.application.shipping.eventhandlers.ShipOrderAndNotifyUser
+import cqrs.ecommerce.api.domain.order.OrderRepository
+import cqrs.ecommerce.api.domain.shipping.ShippingService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

@@ -104,7 +104,7 @@ You can trigger all the operations of this project using the requests inside [th
 - [ ] Configure Swagger and Swagger UI
 - [ ] Include a Event Sourced bounded context or Aggregate
 - [ ] Domain Notifications instead of raising exceptions
-- [ ] Implement concrete repositories with JPA (the current implementations just returns fake instances)
+- [x] Implement concrete repositories with JPA (the current implementations just returns fake instances)
 - [ ] Configure JPMS (java 9 modules)
 
 Contributions are welcome! :heartbeat:

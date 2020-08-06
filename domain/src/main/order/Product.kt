@@ -1,4 +1,4 @@
-package kotlinddd.domain.order
+package cqrs.ecommerce.api.domain.order
 
 import javax.money.MonetaryAmount
 import java.util.UUID

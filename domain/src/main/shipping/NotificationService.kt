@@ -1,6 +1,6 @@
-package kotlinddd.domain.shipping
+package cqrs.ecommerce.api.domain.shipping
 
-import kotlinddd.domain.order.customer.Customer
+import cqrs.ecommerce.api.domain.order.customer.Customer
 import java.util.UUID
 
 interface NotificationService {

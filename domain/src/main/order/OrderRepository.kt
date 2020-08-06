@@ -1,6 +1,6 @@
-package kotlinddd.domain.order
+package cqrs.ecommerce.api.domain.order
 
-import kotlinddd.domain.order.customer.Customer
+import cqrs.ecommerce.api.domain.order.customer.Customer
 import java.util.UUID
 
 interface OrderRepository {
