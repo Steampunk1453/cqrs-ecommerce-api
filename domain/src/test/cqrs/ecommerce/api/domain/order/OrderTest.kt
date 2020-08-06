@@ -1,11 +1,13 @@
 package cqrs.ecommerce.api.domain.order
 
-import cqrs.ecommerce.api.domain.order.customer.*
-import org.amshove.kluent.*
+
+import cqrs.ecommerce.api.domain.order.customer.Address
+import cqrs.ecommerce.api.domain.order.customer.Customer
+import org.amshove.kluent.shouldBe
 import org.javamoney.moneta.Money
 import org.junit.Test
-import java.util.*
-import javax.money.*
+import java.util.UUID
+import javax.money.Monetary
 
 class OrderTest {
     private val address = Address("Foo", 123, "LA", "US")

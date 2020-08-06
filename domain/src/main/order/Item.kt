@@ -12,7 +12,7 @@ class Item(val product: Product, private var quantity: Int) {
         this.quantity = quantity
     }
 
-    fun validateQuantity(quantity: Int) {
+    private fun validateQuantity(quantity: Int) {
         if (quantity <= 0)
             throw BusinessException("Quantity must be greater than zero")
     }
