@@ -23,8 +23,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect"
     implementation "org.springframework.boot:spring-boot-starter"
     implementation "org.springframework.boot:spring-boot-starter-web"
+//    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation "org.springframework.boot:spring-boot-starter-amqp"
     implementation "org.springframework.amqp:spring-rabbit:$spring_boot_version"
+
     testImplementation "org.springframework.boot:spring-boot-starter-test"
 
     implementation "org.axonframework:axon-spring:$axonVersion"
