@@ -10,7 +10,8 @@ import java.util.UUID
 import javax.money.Monetary
 
 class OrderRepositoryImpl : OrderRepository {
-    private val fakeCustomer = Customer(UUID.randomUUID(), "John Doe", Address("a",1, "c", "d"))
+    private val fakeCustomer = Customer(UUID.randomUUID(), "John Doe",
+            Address(UUID.fromString("c04ecc99-d7ba-460c-be78-6995805c5177"), "a",1, "c", "d"))
 
     override fun findById(id: UUID): Order {
         return Order(id = id,
