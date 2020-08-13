@@ -1,5 +1,6 @@
 package cqrs.ecommerce.api.infrastructure.entities.order.customer
 
+import cqrs.ecommerce.api.domain.order.customer.Customer
 import java.util.UUID
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -17,3 +18,7 @@ data class CustomerEntity(
         @ManyToOne
         val address: AddressEntity
 )
+
+fun Customer.toEntity(): CustomerEntity = CustomerEntity(id, name, address.toEntity())
+
+fun CustomerEntity.toDomain(): Customer =  Customer(id, name, address.toDomain())
