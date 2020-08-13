@@ -10,7 +10,7 @@ import java.util.UUID
 import javax.money.Monetary
 
 class OrderTest {
-    private val address = Address("Foo", 123, "LA", "US")
+    private val address = Address(UUID.randomUUID(),"Foo", 123, "LA", "US")
     private val customer = Customer(UUID.randomUUID(), "Jhon", address)
 
     @Test
