@@ -11,7 +11,8 @@ import javax.persistence.Table
 @Entity
 @Table(name = "address")
 data class AddressEntity(
-        @Id @GeneratedValue(strategy = GenerationType.AUTO) val id: UUID,
+        @Id @GeneratedValue(strategy = GenerationType.AUTO)
+        val id: UUID,
         val street: String,
         val number: Int,
         val state: String,

@@ -13,8 +13,8 @@ import javax.persistence.ManyToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "order")
-class OrderEntity(
+@Table(name = "order_table")
+data class OrderEntity(
         @Id @GeneratedValue(strategy = GenerationType.AUTO)
         val id: UUID,
         @ManyToOne
