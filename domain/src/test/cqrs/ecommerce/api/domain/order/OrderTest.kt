@@ -1,6 +1,5 @@
 package cqrs.ecommerce.api.domain.order
 
-
 import cqrs.ecommerce.api.domain.order.customer.Address
 import cqrs.ecommerce.api.domain.order.customer.Customer
 import org.amshove.kluent.shouldBe
