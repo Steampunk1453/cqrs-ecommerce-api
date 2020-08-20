@@ -20,7 +20,7 @@ class CreateOrderController(val commandGateway: CommandGateway) {
         return ResponseEntity(orderId, HttpStatus.CREATED)
     }
 
-    //    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
 //    @ExceptionHandler(BusinessException::class)
 //    fun handleException() {
 //
@@ -31,4 +31,5 @@ class CreateOrderController(val commandGateway: CommandGateway) {
 //    fun handleException() {
 //
 //    }
+
 }

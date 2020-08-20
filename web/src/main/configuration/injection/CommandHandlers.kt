@@ -6,7 +6,9 @@ import cqrs.ecommerce.api.application.order.handlers.CreateOrderCommandHandler
 import cqrs.ecommerce.api.application.order.handlers.PayOrderCommandHandler
 import cqrs.ecommerce.api.application.order.handlers.RemoveProductCommandHandler
 import cqrs.ecommerce.api.domain.order.OrderRepository
+import cqrs.ecommerce.api.domain.order.customer.CustomerRepository
 import cqrs.ecommerce.api.domain.order.payment.PaymentService
+import cqrs.ecommerce.api.domain.order.product.ProductRepository
 import org.axonframework.eventhandling.EventBus
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
@@ -18,6 +20,12 @@ class CommandHandlers {
     lateinit var orderRepository: OrderRepository
 
     @Autowired
+    lateinit var customerRepository: CustomerRepository
+
+    @Autowired
+    lateinit var productRepository: ProductRepository
+
+    @Autowired
     lateinit var paymentService: PaymentService
 
     @Autowired
@@ -26,22 +34,22 @@ class CommandHandlers {
 
     @Bean
     fun getCreateOrderCommandHandler(): CreateOrderCommandHandler {
-        return CreateOrderCommandHandler(orderRepository)
+        return CreateOrderCommandHandler(orderRepository, customerRepository)
     }
 
     @Bean
     fun getAddProductCommandHandler(): AddProductCommandHandler {
-        return AddProductCommandHandler(orderRepository)
+        return AddProductCommandHandler(orderRepository, productRepository)
     }
 
     @Bean
     fun getChangeProductQuantityCommandHandler(): ChangeProductQuantityCommandHandler {
-        return ChangeProductQuantityCommandHandler(orderRepository)
+        return ChangeProductQuantityCommandHandler(orderRepository, productRepository)
     }
 
     @Bean
     fun getRemoveProductCommandHandler(): RemoveProductCommandHandler {
-        return RemoveProductCommandHandler(orderRepository)
+        return RemoveProductCommandHandler(orderRepository, productRepository)
     }
 
     @Bean
