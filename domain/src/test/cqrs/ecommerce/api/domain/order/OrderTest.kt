@@ -1,6 +1,5 @@
 package cqrs.ecommerce.api.domain.order
 
-
 import cqrs.ecommerce.api.domain.order.customer.Address
 import cqrs.ecommerce.api.domain.order.customer.Customer
 import org.amshove.kluent.shouldBe
@@ -10,7 +9,7 @@ import java.util.UUID
 import javax.money.Monetary
 
 class OrderTest {
-    private val address = Address("Foo", 123, "LA", "US")
+    private val address = Address(UUID.randomUUID(),"Foo", 123, "LA", "US")
     private val customer = Customer(UUID.randomUUID(), "Jhon", address)
 
     @Test

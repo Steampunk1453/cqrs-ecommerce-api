@@ -1,0 +1,13 @@
+version: '2'
+services:
+  cqrs-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/cqrs/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=cqrs
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
+
+#  docker-compose -f postgresql.yml up
