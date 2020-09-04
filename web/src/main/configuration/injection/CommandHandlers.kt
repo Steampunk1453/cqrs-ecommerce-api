@@ -2,6 +2,7 @@ package cqrs.ecommerce.api.web.configuration.injection
 
 import cqrs.ecommerce.api.application.order.handlers.AddProductCommandHandler
 import cqrs.ecommerce.api.application.order.handlers.ChangeProductQuantityCommandHandler
+import cqrs.ecommerce.api.application.order.handlers.CreateCustomerCommandHandler
 import cqrs.ecommerce.api.application.order.handlers.CreateOrderCommandHandler
 import cqrs.ecommerce.api.application.order.handlers.PayOrderCommandHandler
 import cqrs.ecommerce.api.application.order.handlers.RemoveProductCommandHandler
@@ -31,7 +32,6 @@ class CommandHandlers {
     @Autowired
     lateinit var eventBus: EventBus
 
-
     @Bean
     fun getCreateOrderCommandHandler(): CreateOrderCommandHandler {
         return CreateOrderCommandHandler(orderRepository, customerRepository)
@@ -55,6 +55,11 @@ class CommandHandlers {
     @Bean
     fun getPayOrderCommandHandler(): PayOrderCommandHandler {
         return PayOrderCommandHandler(orderRepository, paymentService, eventBus)
+    }
+
+    @Bean
+    fun getCreatCustomerCommandHandler(): CreateCustomerCommandHandler {
+        return CreateCustomerCommandHandler(customerRepository)
     }
 
 }
