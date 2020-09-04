@@ -4,6 +4,7 @@ import cqrs.ecommerce.api.domain.BusinessException
 import cqrs.ecommerce.api.domain.order.payment.CreditCard
 import cqrs.ecommerce.api.domain.order.payment.PaymentService
 import cqrs.ecommerce.api.domain.order.customer.Customer
+import cqrs.ecommerce.api.domain.order.product.Product
 import org.axonframework.eventhandling.EventBus
 import org.axonframework.eventhandling.GenericEventMessage
 import java.util.UUID

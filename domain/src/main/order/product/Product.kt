@@ -1,4 +1,4 @@
-package cqrs.ecommerce.api.domain.order
+package cqrs.ecommerce.api.domain.order.product
 
 import javax.money.MonetaryAmount
 import java.util.UUID

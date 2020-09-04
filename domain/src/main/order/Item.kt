@@ -1,6 +1,7 @@
 package cqrs.ecommerce.api.domain.order
 
 import cqrs.ecommerce.api.domain.BusinessException
+import cqrs.ecommerce.api.domain.order.product.Product
 
 class Item(val product: Product, private var quantity: Int) {
     init {

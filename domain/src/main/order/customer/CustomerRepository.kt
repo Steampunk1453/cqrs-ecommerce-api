@@ -4,4 +4,5 @@ import java.util.UUID
 
 interface CustomerRepository {
     fun findCustomerById(customerId: UUID): Customer
+    fun save(customer: Customer)
 }
