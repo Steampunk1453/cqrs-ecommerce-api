@@ -15,11 +15,11 @@ data class AddressEntity(
         val id: UUID,
         val street: String,
         val number: Int,
-        val state: String,
+        val town: String,
         val country: String
 )
 
-fun Address.toEntity(): AddressEntity = AddressEntity(id, street, number, state, country)
+fun Address.toEntity(): AddressEntity = AddressEntity(id, street, number, town, country)
 
-fun AddressEntity.toDomain(): Address = Address(id, street, number, state, country)
+fun AddressEntity.toDomain(): Address = Address(id, street, number, town, country)
 

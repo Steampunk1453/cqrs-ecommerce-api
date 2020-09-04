@@ -1,12 +1,9 @@
 package cqrs.ecommerce.api.infrastructure.entities.order
 
-import cqrs.ecommerce.api.domain.order.Product
-import cqrs.ecommerce.api.domain.order.customer.Address
-import cqrs.ecommerce.api.infrastructure.entities.order.customer.AddressEntity
+import cqrs.ecommerce.api.domain.order.product.Product
 import org.javamoney.moneta.Money
 import javax.money.MonetaryAmount
 import java.util.UUID
-import javax.money.Monetary
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
