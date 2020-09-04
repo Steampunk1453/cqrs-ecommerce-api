@@ -2,6 +2,7 @@ package cqrs.ecommerce.api.domain.order
 
 import cqrs.ecommerce.api.domain.order.customer.Address
 import cqrs.ecommerce.api.domain.order.customer.Customer
+import cqrs.ecommerce.api.domain.order.product.Product
 import org.amshove.kluent.shouldBe
 import org.javamoney.moneta.Money
 import org.junit.Test
