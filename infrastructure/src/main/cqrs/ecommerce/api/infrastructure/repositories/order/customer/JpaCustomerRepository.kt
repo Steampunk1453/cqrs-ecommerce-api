@@ -8,12 +8,12 @@ import java.util.UUID
 
 class JpaCustomerRepository(private val customerRepository: SpringDataCustomerRepository) : CustomerRepository {
 
-    override fun findCustomerById(customerId: UUID): Customer {
-        return customerRepository.findById(customerId).orElse(null).toDomain()
+    override fun save(customer: Customer)  {
+        customerRepository.save(customer.toEntity()).toDomain()
     }
 
-    override fun save(customer: Customer) {
-        customerRepository.save(customer.toEntity())
+    override fun findCustomerById(customerId: UUID): Customer {
+        return customerRepository.findById(customerId).orElse(null).toDomain()
     }
 
 }

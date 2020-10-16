@@ -8,13 +8,12 @@ import java.util.UUID
 
 class JpaAddressRepository(private val addressRepository: SpringDataAddressRepository) : AddressRepository {
 
-    override fun findAddressById(addressId: UUID): Address {
-        return addressRepository.findById(addressId).orElse(null).toDomain()
+    override fun save(address: Address) {
+        addressRepository.save(address.toEntity())
     }
 
-    override fun save(address: Address) {
-        val addressEntity = address.toEntity()
-        addressRepository.save(addressEntity)
+    override fun findAddressById(addressId: UUID): Address {
+        return addressRepository.findById(addressId).orElse(null).toDomain()
     }
 
 }
