@@ -1,5 +1,6 @@
-package cqrs.ecommerce.api.domain.order
+package cqrs.ecommerce.api.application
 
+import cqrs.ecommerce.api.domain.order.Order
 import cqrs.ecommerce.api.domain.order.customer.Address
 import cqrs.ecommerce.api.domain.order.customer.Customer
 import cqrs.ecommerce.api.domain.order.product.Product
