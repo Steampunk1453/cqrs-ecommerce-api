@@ -1,3 +1,18 @@
+buildscript {
+
+    repositories {
+        jcenter()
+    }
+
+}
+
 dependencies {
+
     implementation project(":domain")
+
+    compile "javax.inject:javax.inject:1"
+}
+
+test {
+    useJUnitPlatform()
 }

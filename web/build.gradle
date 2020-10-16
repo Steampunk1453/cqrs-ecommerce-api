@@ -1,7 +1,6 @@
-sourceCompatibility = 1.11
+sourceCompatibility = 11
 
 buildscript {
-    ext.spring_boot_version = '2.0.3.RELEASE'
 
     repositories {
         jcenter()
@@ -9,6 +8,7 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
     }
+
 }
 
 apply plugin: 'kotlin-spring'
@@ -28,8 +28,18 @@ dependencies {
     implementation "org.springframework.amqp:spring-rabbit:$spring_boot_version"
 
     testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "io.mockk:mockk:1.10.0"
+    testImplementation "io.kotlintest:kotlintest-runner-junit5:3.3.0-RC3"
+    testImplementation "io.kotlintest:kotlintest-extensions-spring:3.3.0-RC3"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+    testImplementation "com.github.javafaker:javafaker:0.12"
 
     implementation "org.axonframework:axon-spring:$axonVersion"
     implementation "org.axonframework:axon-spring-boot-autoconfigure:$axonVersion"
     implementation "org.axonframework:axon-amqp:$axonVersion"
+}
+
+test {
+    useJUnitPlatform()
 }
