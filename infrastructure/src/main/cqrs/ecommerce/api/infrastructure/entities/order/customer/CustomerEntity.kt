@@ -13,7 +13,7 @@ import javax.persistence.Table
 @DynamicUpdate
 data class CustomerEntity(
         @Id
-        val id: UUID?,
+        val id: UUID,
         val name: String,
         @ManyToOne
         val address: AddressEntity

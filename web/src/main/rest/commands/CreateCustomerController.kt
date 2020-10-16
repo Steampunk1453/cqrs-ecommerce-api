@@ -19,7 +19,7 @@ class CreateCustomerController(val commandGateway: CommandGateway) {
 
     @PostMapping("/customers")
     fun create(@RequestBody request: CreateCustomerRequest): ResponseEntity<UUID> {
-        val command = CreateCustomerCommand(request.name, request.address.toDomain())
+        val command = CreateCustomerCommand(request.toDomain())
         val customerId = commandGateway.sendAndWait<UUID>(command)
 
         return ResponseEntity(customerId, HttpStatus.CREATED)

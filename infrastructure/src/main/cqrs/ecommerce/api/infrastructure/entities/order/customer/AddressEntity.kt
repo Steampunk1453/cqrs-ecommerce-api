@@ -12,7 +12,7 @@ import javax.persistence.Table
 @DynamicUpdate
 data class AddressEntity(
         @Id
-        val id: UUID?,
+        val id: UUID,
         val street: String,
         val number: Int,
         val town: String,
