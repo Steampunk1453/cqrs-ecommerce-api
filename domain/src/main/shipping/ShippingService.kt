@@ -17,6 +17,6 @@ class ShippingService(private val notificationService: NotificationService,
     private fun availableForUltraFastShipping(order: Order) : Boolean {
         val availableStates = listOf("EU", "JP", "BR", "FR")
 
-        return availableStates.contains(order.customer.address.state)
+        return availableStates.contains(order.customer.address.town)
     }
 }

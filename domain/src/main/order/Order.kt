@@ -4,10 +4,13 @@ import cqrs.ecommerce.api.domain.BusinessException
 import cqrs.ecommerce.api.domain.order.payment.CreditCard
 import cqrs.ecommerce.api.domain.order.payment.PaymentService
 import cqrs.ecommerce.api.domain.order.customer.Customer
+import cqrs.ecommerce.api.domain.order.product.Product
 import org.axonframework.eventhandling.EventBus
 import org.axonframework.eventhandling.GenericEventMessage
+import org.axonframework.spring.stereotype.Aggregate
 import java.util.UUID
 
+@Aggregate
 class Order(val id: UUID, val customer: Customer) {
     private val items = mutableListOf<Item>()
     var paid: Boolean = false
