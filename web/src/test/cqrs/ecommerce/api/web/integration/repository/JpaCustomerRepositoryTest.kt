@@ -1,4 +1,4 @@
-package cqrs.ecommerce.api.web.integration
+package cqrs.ecommerce.api.web.integration.repository
 
 import cqrs.ecommerce.api.domain.order.customer.AddressRepository
 import cqrs.ecommerce.api.domain.order.customer.Customer
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.annotation.DirtiesContext
 
 class JpaCustomerRepositoryTest(@Autowired private val customerRepository: CustomerRepository,
-                                @Autowired private val addressRepository: AddressRepository) :  ContextStarterTest() {
+                                @Autowired private val addressRepository: AddressRepository) : ContextStarterTest() {
 
     @Test
     @DirtiesContext
@@ -32,11 +32,13 @@ class JpaCustomerRepositoryTest(@Autowired private val customerRepository: Custo
         result shouldNotBe {null}
         result shouldBe customer
         result.id shouldBe customer.id
-        result shouldBe customer
-        result shouldBe customer
-        result shouldBe customer
-        result shouldBe customer
-        result shouldBe customer
+        result.name shouldBe customer.name
+        result.address shouldBe customer.address
+        result.address.id shouldBe customer.address.id
+        result.address.country shouldBe customer.address.country
+        result.address.number shouldBe customer.address.number
+        result.address.street shouldBe customer.address.street
+        result.address.town shouldBe customer.address.town
     }
 
     private fun save(customer: Customer) {
