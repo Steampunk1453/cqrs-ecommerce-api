@@ -4,7 +4,6 @@ import cqrs.ecommerce.api.application.order.handlers.CreateCustomerCommandHandle
 import cqrs.ecommerce.api.domain.order.customer.AddressRepository
 import cqrs.ecommerce.api.domain.order.customer.CustomerRepository
 import cqrs.ecommerce.api.web.stubs.CreateCustomerCommandStub
-import cqrs.ecommerce.api.web.stubs.CreateCustomerStub
 import io.mockk.Runs
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
