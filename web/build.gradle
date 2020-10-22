@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
     }
 
 }
@@ -25,19 +25,19 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
 //    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation "org.springframework.boot:spring-boot-starter-amqp"
-    implementation "org.springframework.amqp:spring-rabbit:$spring_boot_version"
-
-    testImplementation "org.springframework.boot:spring-boot-starter-test"
-    testImplementation "io.mockk:mockk:1.10.0"
-    testImplementation "io.kotlintest:kotlintest-runner-junit5:3.3.0-RC3"
-    testImplementation "io.kotlintest:kotlintest-extensions-spring:3.3.0-RC3"
-    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
-    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
-    testImplementation "com.github.javafaker:javafaker:0.12"
+    implementation "org.springframework.amqp:spring-rabbit:$springBootVersion"
 
     implementation "org.axonframework:axon-spring:$axonVersion"
     implementation "org.axonframework:axon-spring-boot-autoconfigure:$axonVersion"
     implementation "org.axonframework:axon-amqp:$axonVersion"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation"io.kotlintest:kotlintest-runner-junit5:$kotlinTestVersion"
+    testImplementation"io.kotlintest:kotlintest-extensions-spring:$kotlinTestVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+    testImplementation "io.mockk:mockk:$mockkVersion"
+    testImplementation "com.github.javafaker:javafaker:0.12"
 }
 
 test {
