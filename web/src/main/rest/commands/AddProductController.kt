@@ -13,6 +13,7 @@ import java.util.UUID
 
 @RestController
 class AddProductController(val commandGateway: CommandGateway) {
+
     @PatchMapping("/orders/{orderId}/products")
     @ResponseStatus(HttpStatus.OK)
     fun add(@PathVariable("orderId") orderId: String, @RequestBody request: AddProductRequest) {
@@ -22,4 +23,5 @@ class AddProductController(val commandGateway: CommandGateway) {
 
         commandGateway.sendAndWait<UUID>(command)
     }
+
 }
