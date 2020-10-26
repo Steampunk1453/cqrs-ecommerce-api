@@ -1,19 +1,18 @@
 package cqrs.ecommerce.api.infrastructure.entities.order
 
 import cqrs.ecommerce.api.domain.order.product.Product
+import org.hibernate.annotations.DynamicUpdate
 import org.javamoney.moneta.Money
-import javax.money.MonetaryAmount
 import java.util.UUID
+import javax.money.MonetaryAmount
 import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
 @Table(name = "product")
 data class ProductEntity(
-        @Id @GeneratedValue(strategy = GenerationType.AUTO)
+        @Id
         val id: UUID,
         val description: String,
         val price: Double,
