@@ -12,6 +12,7 @@ import java.util.UUID
 
 @RestController
 class CreateOrderController(val commandGateway: CommandGateway) {
+
     @PostMapping("/orders")
     fun create(@RequestBody request: CreateOrderRequest): ResponseEntity<UUID> {
         val command = CreateOrderCommand(UUID.fromString(request.customerId))
@@ -22,14 +23,14 @@ class CreateOrderController(val commandGateway: CommandGateway) {
 
 //    @ResponseStatus(HttpStatus.BAD_REQUEST)
 //    @ExceptionHandler(BusinessException::class)
-//    fun handleException() {
-//
+//    fun handleClientException() {
+//        // TODO Implement
 //    }
 //
 //    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 //    @ExceptionHandler(Exception::class)
-//    fun handleException() {
-//
+//    fun handleServerException() {
+//        // TODO Implement
 //    }
 
 }
