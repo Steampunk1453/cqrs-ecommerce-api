@@ -12,7 +12,7 @@ import java.util.UUID
 
 @Aggregate
 class Order(val id: UUID, val customer: Customer) {
-    private val items = mutableListOf<Item>()
+    var items = mutableListOf<Item>()
     var paid: Boolean = false
         private set
 
