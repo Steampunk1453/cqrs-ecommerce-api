@@ -1,5 +1,6 @@
 package cqrs.ecommerce.api.infrastructure.entities.order
 
+import cqrs.ecommerce.api.domain.order.Item
 import cqrs.ecommerce.api.domain.order.Order
 import cqrs.ecommerce.api.infrastructure.entities.order.customer.CustomerEntity
 import cqrs.ecommerce.api.infrastructure.entities.order.customer.toDomain
@@ -26,4 +27,10 @@ data class OrderEntity(
 
 fun Order.toEntity(): OrderEntity = OrderEntity(id, customer.toEntity(), items().map { it.toEntity() }, paid)
 
-fun OrderEntity.toDomain(): Order =  Order(id, customer.toDomain())
+fun OrderEntity.toDomain(): Order{
+        val order = Order(id, customer.toDomain())
+        order.items = items.map { it.toDomain() } as MutableList<Item>
+        return order
+}
+
+

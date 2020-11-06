@@ -22,3 +22,5 @@ class ItemEntity(
 )
 
 fun Item.toEntity(): ItemEntity = ItemEntity(null, product.toEntity(), quantity)
+
+fun ItemEntity.toDomain(): Item = Item(product.toDomain(), quantity)
