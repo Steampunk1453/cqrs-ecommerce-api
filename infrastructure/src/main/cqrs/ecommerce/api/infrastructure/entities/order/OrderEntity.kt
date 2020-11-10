@@ -20,7 +20,7 @@ data class OrderEntity(
         val id: UUID,
         @ManyToOne
         val customer: CustomerEntity,
-        @OneToMany(cascade = [(CascadeType.ALL)])
+        @OneToMany(orphanRemoval = true, cascade = [CascadeType.ALL])
         val items: List<ItemEntity>,
         val paid: Boolean
 )
