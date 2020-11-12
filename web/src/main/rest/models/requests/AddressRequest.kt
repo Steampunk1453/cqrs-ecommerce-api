@@ -1,4 +1,4 @@
-package cqrs.ecommerce.api.web.models
+package cqrs.ecommerce.api.web.rest.models.requests
 
 import cqrs.ecommerce.api.domain.order.customer.Address
 import java.util.UUID

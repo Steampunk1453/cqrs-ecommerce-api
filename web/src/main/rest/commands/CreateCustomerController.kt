@@ -1,11 +1,8 @@
 package cqrs.ecommerce.api.web.rest.commands
 
 import cqrs.ecommerce.api.application.order.commands.CreateCustomerCommand
-import cqrs.ecommerce.api.application.order.commands.CreateOrderCommand
-import cqrs.ecommerce.api.domain.order.customer.Address
-import cqrs.ecommerce.api.web.models.CreateCustomerRequest
-import cqrs.ecommerce.api.web.models.CreateOrderRequest
-import cqrs.ecommerce.api.web.models.toDomain
+import cqrs.ecommerce.api.web.rest.models.requests.CreateCustomerRequest
+import cqrs.ecommerce.api.web.rest.models.requests.toDomain
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

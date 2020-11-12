@@ -1,7 +1,7 @@
 package cqrs.ecommerce.api.web.rest.commands
 
 import cqrs.ecommerce.api.application.order.commands.AddProductCommand
-import cqrs.ecommerce.api.web.models.AddProductRequest
+import cqrs.ecommerce.api.web.rest.models.requests.AddProductRequest
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PatchMapping
@@ -13,6 +13,7 @@ import java.util.UUID
 
 @RestController
 class AddProductController(val commandGateway: CommandGateway) {
+
     @PatchMapping("/orders/{orderId}/products")
     @ResponseStatus(HttpStatus.OK)
     fun add(@PathVariable("orderId") orderId: String, @RequestBody request: AddProductRequest) {
@@ -22,4 +23,5 @@ class AddProductController(val commandGateway: CommandGateway) {
 
         commandGateway.sendAndWait<UUID>(command)
     }
+
 }

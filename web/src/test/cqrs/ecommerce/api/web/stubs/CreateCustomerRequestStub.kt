@@ -1,8 +1,8 @@
 package cqrs.ecommerce.api.web.stubs
 
 import com.github.javafaker.Faker
-import cqrs.ecommerce.api.web.models.AddressRequest
-import cqrs.ecommerce.api.web.models.CreateCustomerRequest
+import cqrs.ecommerce.api.web.rest.models.requests.AddressRequest
+import cqrs.ecommerce.api.web.rest.models.requests.CreateCustomerRequest
 
 class CreateCustomerRequestStub {
 

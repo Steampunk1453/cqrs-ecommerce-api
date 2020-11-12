@@ -12,7 +12,7 @@ import java.util.UUID
 
 @Aggregate
 class Order(val id: UUID, val customer: Customer) {
-    private val items = mutableListOf<Item>()
+    var items = mutableListOf<Item>()
     var paid: Boolean = false
         private set
 
@@ -57,4 +57,9 @@ class Order(val id: UUID, val customer: Customer) {
         if (!isOnList)
             throw BusinessException("The product isn't included in this order")
     }
+
+    fun guardOrderExists(id: UUID, order: Order?) {
+        order ?: throw BusinessException("Order with id: $id doesn't exist")
+    }
+
 }

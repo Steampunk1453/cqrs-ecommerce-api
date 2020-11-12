@@ -8,8 +8,16 @@ import java.util.UUID
 
 class JpaOrderRepository(private val orderRepository: SpringDataOrderRepository) : OrderRepository {
 
+    override fun findAll(): List<Order> {
+        return orderRepository.findAll().map { it.toDomain() }
+    }
+
     override fun findById(id: UUID): Order {
         return orderRepository.findById(id).orElse(null).toDomain()
+    }
+
+    override fun findOrdersByCustomer(customer: String): List<Order> {
+        return orderRepository.findOrderEntitiesByCustomerName(customer).map { it.toDomain() }
     }
 
     override fun save(order: Order) {
