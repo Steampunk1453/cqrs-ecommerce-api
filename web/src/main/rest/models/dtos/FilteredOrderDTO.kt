@@ -1,4 +1,4 @@
-package cqrs.ecommerce.api.infrastructure.queries.dtos
+package cqrs.ecommerce.api.web.rest.models.dtos
 
 import cqrs.ecommerce.api.domain.order.Item
 import cqrs.ecommerce.api.domain.order.Order
