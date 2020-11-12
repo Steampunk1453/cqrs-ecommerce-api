@@ -9,7 +9,7 @@ open class FindOrderQueryHandler(private val orderRepository: OrderRepository) {
 
     @QueryHandler
     fun handle(query: FindOrderQuery): Order {
-        return orderRepository.findById(query.orderId)
+        return orderRepository.findById(query.orderId).also { it.guardOrderExists(it.id, it) }
     }
 
 }
