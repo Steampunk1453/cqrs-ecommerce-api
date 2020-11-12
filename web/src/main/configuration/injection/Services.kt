@@ -4,6 +4,7 @@ import cqrs.ecommerce.api.domain.shipping.ShippingService
 import cqrs.ecommerce.api.infrastructure.services.EmailNotificationService
 import cqrs.ecommerce.api.infrastructure.services.FedExDeliveryService
 import cqrs.ecommerce.api.infrastructure.services.PaymentServiceImpl
+import cqrs.ecommerce.api.web.rest.mappers.LastOrdersMapper
 import cqrs.ecommerce.api.web.rest.mappers.OrderPerCustomerMapper
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -33,5 +34,10 @@ class Services {
     @Bean
     fun getOrderPerCustomerMapper(): OrderPerCustomerMapper {
         return OrderPerCustomerMapper()
+    }
+
+    @Bean
+    fun getLastOrdersMapper(): LastOrdersMapper {
+        return LastOrdersMapper()
     }
 }
