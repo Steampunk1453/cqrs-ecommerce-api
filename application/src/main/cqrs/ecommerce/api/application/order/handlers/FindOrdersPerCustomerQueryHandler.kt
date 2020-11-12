@@ -9,8 +9,8 @@ open class FindOrdersPerCustomerQueryHandler(private val orderRepository: OrderR
 
     @QueryHandler
     fun handle(query: FindOrdersPerCustomerQuery): List<Order> {
-        return orderRepository.findAllOrders()
-        }
+        return orderRepository.findAll()
+    }
 
 }
 

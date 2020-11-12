@@ -8,7 +8,7 @@ import java.util.UUID
 
 class JpaOrderRepository(private val orderRepository: SpringDataOrderRepository) : OrderRepository {
 
-    override fun findAllOrders(): List<Order> {
+    override fun findAll(): List<Order> {
         return orderRepository.findAll().map { it.toDomain() }
     }
 
