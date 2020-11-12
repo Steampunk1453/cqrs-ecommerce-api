@@ -27,7 +27,7 @@ data class OrderEntity(
 
 fun Order.toEntity(): OrderEntity = OrderEntity(id, customer.toEntity(), items().map { it.toEntity() }, paid)
 
-fun OrderEntity.toDomain(): Order{
+fun OrderEntity.toDomain(): Order {
         val order = Order(id, customer.toDomain())
         order.items = items.map { it.toDomain() } as MutableList<Item>
         return order
