@@ -1,11 +1,10 @@
 package cqrs.ecommerce.api.application.order.handlers
 
 import cqrs.ecommerce.api.domain.order.OrderRepository
-import cqrs.ecommerce.api.domain.order.PayOrderCommand
+import cqrs.ecommerce.api.application.order.commands.PayOrderCommand
 import cqrs.ecommerce.api.domain.order.payment.PaymentService
 import org.axonframework.commandhandling.CommandHandler
 import org.axonframework.commandhandling.gateway.CommandGateway
-import org.axonframework.eventhandling.EventBus
 
 open class PayOrderCommandHandler(private val repository: OrderRepository,
                                   private val paymentService: PaymentService,

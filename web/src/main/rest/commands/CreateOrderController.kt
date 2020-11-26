@@ -21,16 +21,4 @@ class CreateOrderController(val commandGateway: CommandGateway) {
         return ResponseEntity(orderId, HttpStatus.CREATED)
     }
 
-//    @ResponseStatus(HttpStatus.BAD_REQUEST)
-//    @ExceptionHandler(BusinessException::class)
-//    fun handleClientException() {
-//        // TODO Implement
-//    }
-//
-//    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-//    @ExceptionHandler(Exception::class)
-//    fun handleServerException() {
-//        // TODO Implement
-//    }
-
 }

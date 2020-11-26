@@ -5,6 +5,7 @@ import cqrs.ecommerce.api.domain.order.payment.CreditCard
 import cqrs.ecommerce.api.domain.order.payment.PaymentService
 import cqrs.ecommerce.api.domain.order.customer.Customer
 import cqrs.ecommerce.api.domain.order.product.Product
+import org.axonframework.commandhandling.gateway.CommandGateway
 import org.axonframework.eventhandling.EventBus
 import org.axonframework.eventhandling.GenericEventMessage
 import org.axonframework.spring.stereotype.Aggregate
@@ -37,14 +38,14 @@ class Order(val id: UUID, val customer: Customer) {
         items.removeAll { it.product == product }
     }
 
-    fun pay(creditCard: CreditCard, paymentService: PaymentService, eventBus: EventBus) {
+    fun pay(creditCard: CreditCard, paymentService: PaymentService, commandGateway: CommandGateway) {
         if (this.paid)
             throw BusinessException("Order already paid!")
 
         val debitedWithSuccess = paymentService.debitValueByCreditCard(creditCard)
         if (debitedWithSuccess) {
             this.paid = true
-            eventBus.publish(GenericEventMessage.asEventMessage<OrderPaid>(OrderPaid(this.id))) //TODO improve this by putting some helpers in a aggregate base class and may creating an DomainEvent base class
+            commandGateway.sendAndWait<UUID>(OrderPaid(this.id))
         } else {
             throw BusinessException("The amount could not be debited from this credit card")
         }

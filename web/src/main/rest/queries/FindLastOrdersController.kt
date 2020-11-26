@@ -3,8 +3,8 @@ package cqrs.ecommerce.api.web.rest.queries
 import cqrs.ecommerce.api.application.order.queries.FindLastOrdersQuery
 import cqrs.ecommerce.api.domain.order.Order
 import cqrs.ecommerce.api.web.rest.mappers.LastOrdersMapper
+import org.axonframework.messaging.responsetypes.ResponseTypes
 import org.axonframework.queryhandling.QueryGateway
-import org.axonframework.queryhandling.responsetypes.ResponseTypes
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
