@@ -14,7 +14,6 @@ buildscript {
 apply plugin: 'kotlin-spring'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-
 dependencies {
     implementation project(":application")
     implementation project(":domain")
@@ -23,13 +22,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect"
     implementation "org.springframework.boot:spring-boot-starter"
     implementation "org.springframework.boot:spring-boot-starter-web"
-//    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-amqp"
     implementation "org.springframework.amqp:spring-rabbit:$springBootVersion"
-
-    implementation "org.axonframework:axon-spring:$axonVersion"
-    implementation "org.axonframework:axon-spring-boot-autoconfigure:$axonVersion"
-    implementation "org.axonframework:axon-amqp:$axonVersion"
+    implementation "org.axonframework:axon-spring-boot-starter:$axonVersion"
 
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation"io.kotlintest:kotlintest-runner-junit5:$kotlinTestVersion"
@@ -39,6 +35,12 @@ dependencies {
     testImplementation "io.mockk:mockk:$mockkVersion"
     testImplementation "com.github.javafaker:javafaker:0.12"
 }
+
+
+configurations {
+    compile.exclude group: 'org.axonframework', module: 'axon-server-connector'
+}
+
 
 test {
     useJUnitPlatform()

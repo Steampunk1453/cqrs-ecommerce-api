@@ -11,6 +11,7 @@ import java.util.UUID
 
 @RestController
 class DeleteProductController(val commandGateway: CommandGateway) {
+
     @DeleteMapping("/orders/{orderId}/products/{productId}")
     @ResponseStatus(HttpStatus.OK)
     fun delete(@PathVariable("orderId") orderId: String,

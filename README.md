@@ -6,6 +6,7 @@
 
 # Technologies/frameworks/tools involved
 
+- Kotlin
 - Spring
 - Axon Framework
   - CommandGateway (Command Handlers)
@@ -44,10 +45,8 @@ This project is based on a didactic domain that basically consists in maintainin
 * Add products ta a given order
 * Change product quantity
 * Remove product
-* Pay the order (this operation fires an Event for the shipping bounded context) 
- * Shipping (side effect of the above event): ships product and notify user
-
-Pretty simple, right? 
+* Pay the order
+* Shipping: ships product and notify user
 
 # Setup
 
@@ -63,48 +62,18 @@ Pretty simple, right?
 gradlew.bat build
 ```
 
-### RabbitMQ setup
-
-There is a file named `AMQPRabbitConfiguration` in this repo (located [here](https://github.com/fabriciorissetto/kotlin-ddd-sample/blob/master/web/src/main/configuration/injection/AMQPRabbitConfiguration.kt)) where the configuration needed by axon to integrate with RabbitMQ (to send end receive persistent messages) is stored. To use that, just remove the comments. 
-
-You need a running rabbit, you can start one in a docker container using the following commands:
-
-```bash
-docker pull rabbitmq
-docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3-management
-```
-
-You can access the rabbit UI by this url: [http://172.17.0.2:15672](http://172.17.0.2:15672).
-
-* **User**: guest
-* **Password**: guest
- 
-That's it. You don't need to do anything else, the setup in the `AMQPRabbitConfiguration` class will create the necessary queue and exchange in Rabbit and also configure axon accordingly. Note that if you customize something in your rabbit server you need to adjust the `application.properties` file (here we are using the default ports, ips, etc).
-
-This both dependencies are used just for Rabbit:
- * `org.springframework.boot:spring-boot-starter-amqp`: enables AMQP in Spring Boot
- * `org.axonframework:axon-amqp`: configures some beans for axon to integrate with `SpringAMQPMessageSource` class from the above dependency
-
-If you don't want o use an AMQP you can remove this dependencies from the web project gradle's file.
-
 # Tests
 
 ```
 ./gradlew test
 ```
 
-### Postman requests
-
-You can trigger all the operations of this project using the requests inside [this json](https://github.com/fabriciorissetto/kotlin-ddd-sample/blob/master/docs/postman_example_requests.json) (just import it on your local postman).
-
 # Backlog
 - [x] Implement Unit Tests examples (Domain layer)
-- [ ] Implement Integrated Tests examples (Web layer)
+- [x] Implement Integrated Tests examples (Web layer)
 - [ ] Include docker container with JDK and gradle configured
 - [ ] Configure Swagger and Swagger UI
 - [ ] Include a Event Sourced bounded context or Aggregate
 - [ ] Domain Notifications instead of raising exceptions
 - [x] Implement concrete repositories with JPA (the current implementations just returns fake instances)
-- [ ] Configure JPMS (java 9 modules)
 
-Contributions are welcome! :heartbeat:

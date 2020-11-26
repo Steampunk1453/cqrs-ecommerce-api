@@ -1,7 +1,6 @@
 package cqrs.ecommerce.api.infrastructure.entities.order
 
 import cqrs.ecommerce.api.domain.order.product.Product
-import org.hibernate.annotations.DynamicUpdate
 import org.javamoney.moneta.Money
 import java.util.UUID
 import javax.money.MonetaryAmount

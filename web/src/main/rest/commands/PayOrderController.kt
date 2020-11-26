@@ -15,6 +15,7 @@ import java.util.Date
 
 @RestController
 class PayOrderController(val commandGateway: CommandGateway) {
+
     @PatchMapping("/orders/{orderId}")
     @ResponseStatus(HttpStatus.OK)
     fun pay(@PathVariable("orderId") orderId: String,

@@ -13,6 +13,7 @@ import java.util.UUID
 
 @RestController
 class ChangeProductQuantityController(val commandGateway: CommandGateway) {
+
     @PatchMapping("/orders/{orderId}/products/{productId}")
     @ResponseStatus(HttpStatus.OK)
     fun change(@PathVariable("orderId") orderId: String,
@@ -25,4 +26,5 @@ class ChangeProductQuantityController(val commandGateway: CommandGateway) {
 
         commandGateway.sendAndWait<UUID>(command)
     }
+
 }

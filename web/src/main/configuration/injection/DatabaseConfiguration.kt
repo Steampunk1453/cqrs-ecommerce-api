@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 
 @Configuration
-@EntityScan(basePackages = ["cqrs.ecommerce.api.infrastructure.entities", "org.axonframework.eventhandling.saga.repository.jpa"])
+@EntityScan(basePackages = ["cqrs.ecommerce.api.infrastructure.entities", "org.axonframework.modelling.saga.repository.jpa"])
 @EnableJpaRepositories(basePackages = ["cqrs.ecommerce.api.infrastructure.repositories"])
 class DatabaseConfiguration

@@ -32,13 +32,13 @@ internal class CreateCustomerCommandHandlerTest {
 
     @Test
     fun `should create a new customer and returns not null value`() {
-        val createCustomerCommand = CreateCustomerCommandStub.random()
+        val command = CreateCustomerCommandStub.random()
         every { addressRepository.save(any()) } just Runs
         every { customerRepository.save(any()) } just Runs
 
         handler = CreateCustomerCommandHandler(customerRepository, addressRepository)
 
-        val result = handler.handle(createCustomerCommand)
+        val result = handler.handle(command)
 
         verify(atLeast = 1) { addressRepository.save(any()) }
         verify(atLeast = 1) { customerRepository.save(any()) }
