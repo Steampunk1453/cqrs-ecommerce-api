@@ -12,7 +12,8 @@ buildscript {
 dependencies {
     implementation project(":domain")
     implementation project(":application")
-    compile "org.springframework.boot:spring-boot-starter-data-jpa:2.3.2.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-mail:$springBootVersion"
     runtimeOnly "com.h2database:h2:1.4.200"
 //    implementation "org.postgresql:postgresql:42.2.14"
 }

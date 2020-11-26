@@ -19,7 +19,7 @@ version = '1.0-SNAPSHOT'
 
 ext.kotlinVersion = '1.4.10'
 ext.kotlinTestVersion = '1.4.10'
-ext.axonVersion = '3.3'
+ext.axonVersion = '4.0'
 ext.springBootVersion = '2.2.10.RELEASE'
 ext.junitPlatformVersion = '1.0.1'
 ext.junitJupiterVersion = '5.0.1'
@@ -45,9 +45,6 @@ allprojects {
         }
     }
 
-    dependencies {
-        implementation "org.axonframework:axon-core:$axonVersion"
-    }
 }
 
 subprojects {
